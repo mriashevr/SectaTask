@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ConsoleApp1/1.0.0": {
+        "dependencies": {
+          "Spectre.Console": "0.43.1-preview.0.42"
+        },
+        "runtime": {
+          "ConsoleApp1.dll": {}
+        }
+      },
+      "Spectre.Console/0.43.1-preview.0.42": {
+        "runtime": {
+          "lib/net5.0/Spectre.Console.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.43.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConsoleApp1/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Spectre.Console/0.43.1-preview.0.42": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-59p8s6ALD/QaTTbxpb0yj/jXa+wlU42fpkCoU8sLxU9NZIqPg5l+mxDLFbheenYR8j7nLln8YgKt6efgusQVMA==",
+      "path": "spectre.console/0.43.1-preview.0.42",
+      "hashPath": "spectre.console.0.43.1-preview.0.42.nupkg.sha512"
+    }
+  }
+}
