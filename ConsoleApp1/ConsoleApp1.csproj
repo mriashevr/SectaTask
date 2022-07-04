@@ -9,8 +9,4 @@
       <PackageReference Include="Spectre.Console" Version="0.43.1-preview.0.42" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Servise" />
-    </ItemGroup>
-
 </Project>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1.Entities
 {
@@ -7,10 +8,39 @@ namespace ConsoleApp1.Entities
         public TaskGroup(string name)
         {
             Name = name;
+            Id = new Guid();
             Tasks = new List<Task>();
         }
+
+        public void AddTask(Task task)
+        {
+            this.Tasks.Add(task);
+            task.TaskInfo.TaskGroup = this;
+            if (task.TaskInfo.SubTask != null)
+            {
+                foreach (var subTask in this.Tasks)
+                {
+                    this.Tasks.Add(subTask);
+                    subTask.TaskInfo.TaskGroup = this;
+                }
+            }
+        }
+
+        public void DeleteTask(Task task)
+        {
+            this.Tasks.Remove(task);
+            if (task.TaskInfo.SubTask != null)
+            {
+                foreach (var subTask in this.Tasks)
+                {
+                    this.Tasks.Remove(subTask);
+                    subTask.TaskInfo.TaskGroup = null;
+                }
+            }
+        }
         
-        public string Name { get; }
+        public Guid Id { get; set; }
+        public string Name { get; set; }
         public List<Task> Tasks { get; set; }
 
     }

@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleApp1.Entities;
 using Spectre.Console;
 
 namespace ConsoleApp1
@@ -7,16 +8,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            AnsiConsole.Markup("[underline red]Hello World![/]\n");
-            
-            
-            var table =  new Table();
-            table.AddColumn("Name");
-            table.AddColumn("Status");
-            
-            table.AddRow("Sonya", "[green]doing physics[/]");
-            table.AddRow("Mary", "[red]doing shit[/]");
-            AnsiConsole.Render(table);
+            // AnsiConsole.Markup("[underline red]Hello World![/]\n");
+            //
+            //
+            // var table =  new Table();
+            // table.AddColumn("Name");
+            // table.AddColumn("Status");
+            //
+            // table.AddRow("Sonya", "[green]doing physics[/]");
+            // table.AddRow("Mary", "[red]doing shit[/]");
+            // AnsiConsole.Render(table);
+
+            var task1 = new Task("First Task");
         }
     }
 }

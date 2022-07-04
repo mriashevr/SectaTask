@@ -6,16 +6,18 @@ namespace ConsoleApp1.Entities
 {
     public class TaskInfo
     {
-        public TaskInfo()
+        public TaskInfo(DateTime deadline=default, string description = null)
         {
-            Discription = null;
-            Deadline = DateTime.Today;
+            Description = description ?? "Not set";
+            TaskGroup = null;
+            Deadline = deadline == default ? DateTime.Today : deadline;
             SubTask = new List<Task>();
         }
         
-        public string Discription { get; set; }
+        public string Description { get; set; }
         public DateTime Deadline { get; set; }
         public List<Task> SubTask { get; set; }
+        public TaskGroup TaskGroup { get; set; }
         
     }
 }
