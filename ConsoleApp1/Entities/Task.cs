@@ -8,14 +8,15 @@ namespace ConsoleApp1.Entities
         public Task(string name, string description = null, DateTime deadline = default)
         {
             Name = name;
-            Id = new Guid();
+            Id = Guid.NewGuid();
             Complete = false;
             TaskInfo = new TaskInfo(deadline, description);
         }
 
         public Task AddParentTask(Task parentTask)
         {
-            parentTask.TaskInfo.SubTask.Add(this);
+            if (parentTask.Id != Id)
+                parentTask.TaskInfo.SubTask.Add(this);
             return this;
         }
 
