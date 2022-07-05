@@ -26,6 +26,17 @@ namespace ConsoleApp1.Entities
             }
         }
 
+        public List<Task> GetAllTasks()
+        {
+            List<Task> tasks = null;
+            foreach (var task in this.Tasks)
+            {
+                tasks.Add(task);
+            }
+
+            return tasks;
+        }
+
         public void DeleteTask(Task task)
         {
             this.Tasks.Remove(task);

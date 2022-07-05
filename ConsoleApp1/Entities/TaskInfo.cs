@@ -8,7 +8,7 @@ namespace ConsoleApp1.Entities
     {
         public TaskInfo(DateTime deadline=default, string description = null)
         {
-            Description = description ?? "Not set";
+            Description = string.IsNullOrEmpty(description) ? "Not set" : description;
             TaskGroup = null;
             Deadline = deadline == default ? DateTime.Today : deadline;
             SubTask = new List<Task>();
